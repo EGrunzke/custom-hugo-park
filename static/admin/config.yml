@@ -8,11 +8,12 @@ collections:
     label: 'Blog'
     folder: 'content/blog'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{title}}'
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Park Name', name: 'title', widget: 'string' }
+      - { label: 'Meetup Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss', date_format: 'ddd MMM DD', time_format: 'hh:mma'}
+      - { label: "Image", name: "thumbnail", widget: "image"}
+      - { label: "Location", name: "location", widget: "map" }
       - { label: 'Body', name: 'body', widget: 'markdown' }

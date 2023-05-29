@@ -59,9 +59,14 @@
 							<section class="box special">
 								<header class="major">
 									<h2>{{.Title}}</h2>
-									{{.Content}}
+									<h4>{{ dateFormat "Monday Jan 2, 3:04pm" .Date }}</h4>
+									<!-- <h4>{{ .Date }}</h4> -->
+									<!-- <p>{{.Params.Location}}</p> -->
+									<div style="border-top: solid 2px #e5e5e5;">
+										{{.Content}}
+									</div>
 								</header>
-								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+								<span class="image featured"><img src="{{ .Params.thumbnail }}" alt="" /></span>
 							</section>
 						{{end}}
 					{{end}}
