@@ -40,8 +40,9 @@
 
 			<!-- Main -->
 				<section id="main" class="container">
+					{{ $sixHoursFromNow := now.Add 6 "hour" }}
 					{{ range .Site.Pages.ByDate }}
-						{{ if and (ge .Date.Unix now.Unix) (and (eq .Section "blog") (not (eq .RelPermalink "/blog/"))) }}
+						{{ if and (ge .Date.Unix $sixHoursFromNow.Unix) (and (eq .Section "blog") (not (eq .RelPermalink "/blog/"))) }}
 							<section class="box special">
 								<header class="major">
 									<h2>{{.Title}}</h2>
