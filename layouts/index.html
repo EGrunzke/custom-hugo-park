@@ -32,17 +32,16 @@
 			<!-- Banner -->
 				<section id="banner">
 					<h2>Fort Collins Park Fun</h2>
-					<p>Weekly meetups for families</p>
-					<!-- <ul class="actions special">
-						<li><a href="#" class="button primary">Sign Up</a></li>
-						<li><a href="#" class="button">Learn More</a></li>
-					</ul> -->
+					<ul class="actions special">
+						<li><a href="#about-us" class="button primary">About Us</a></li>
+						<!-- <li><a href="#" class="button">Next Meeting</a></li> -->
+					</ul>
 				</section>
 
 			<!-- Main -->
 				<section id="main" class="container">
-					{{ range .Site.Pages.ByDate.Reverse }}
-						{{ if and (eq .Section "blog") (not (eq .RelPermalink "/blog/")) }}
+					{{ range .Site.Pages.ByDate }}
+						{{ if and (ge .Date.Unix now.Unix) (and (eq .Section "blog") (not (eq .RelPermalink "/blog/"))) }}
 							<section class="box special">
 								<header class="major">
 									<h2>{{.Title}}</h2>
@@ -59,6 +58,50 @@
 							</section>
 						{{end}}
 					{{end}}
+					<section class="box special" id="about-us">
+						<header class="major">
+							<h2 style="margin: -1.25em 0 .5em 0;">About Us</h2>
+
+							<div style="border-top: solid 2px #e5e5e5;">
+								<p style="margin: 0 0 1.5em 0;">We're two moms with young kids who want structure this summer! <br />
+									Bring your kids and enjoy playmates and adult conversation at our park meetups. <br />
+									<em>- Sara and Marie</em>
+								</p>
+								<p>&nbsp;</p>
+							</div>
+							<div style="border-top: solid 2px #e5e5e5;">
+								<p style="margin: 0 0 1.5em 0;"><b>Tuesdays</b>: parks local to Fort Collins, sometimes paired with other events nearby like storytimes. 9:30 am-11:30 am <br />
+									<br />
+									<b>Fridays</b>: bigger parks in Fort Collins and surrounding areas. Most will have a water option: splash pad, pond, creek, etc. We recommend you give your kids the gift of time and plan to stay the whole morning! 9:30 am - 1:30pm</p>
+							</div>
+							<div style="border-top: solid 2px #e5e5e5;">
+								<h4 style="margin: 1.5em;">Helpful things to pack, depending on the park</h4>
+								<table>
+									<tr>
+										<td>lunch</td>
+										<td>sunscreen</td>
+									</tr>
+									<tr>
+										<td>water bottles</td>
+										<td>shade umbrella</td>
+									</tr>
+									<tr>
+										<td>swim suits</td>
+										<td>sand / water toys</td>
+									</tr>
+									<tr>
+										<td>critter-catching nets</td>
+										<td>snacks</td>
+									</tr>
+									<tr>
+										<td>change of clothes</td>
+										<td>wipes (helpful at any age amiright)</td>
+									</tr>
+								<table>
+							</div>
+						</header>
+						<!-- <span class="image featured"><img src="" alt="" /></span> -->
+					</section>
 				</section>
 		</div>
 
