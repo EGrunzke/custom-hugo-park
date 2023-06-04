@@ -2,3 +2,4 @@ baseURL = 'http://unique-ganache-c27ceb.netlify.app/'
 languageCode = 'en-us'
 title = 'Fort Collins Park Fun'
 buildFuture = true
+timeZone = 'America/Denver'

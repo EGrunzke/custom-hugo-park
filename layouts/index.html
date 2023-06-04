@@ -40,22 +40,25 @@
 
 			<!-- Main -->
 				<section id="main" class="container">
-					{{ $sixHoursFromNow := now.Add 6 "hour" }}
+					{{ $sixHoursAgo := sub now.Unix (mul 60 60 6) }}
+					
 					{{ range .Site.Pages.ByDate }}
-						{{ if and (ge .Date.Unix $sixHoursFromNow.Unix) (and (eq .Section "blog") (not (eq .RelPermalink "/blog/"))) }}
+						{{ if and (ge .Date.Unix $sixHoursAgo) (and (eq .Section "blog") (not (eq .RelPermalink "/blog/"))) }}
 							<section class="box special">
 								<header class="major">
 									<h2>{{.Title}}</h2>
 									<h4>{{ dateFormat "Monday Jan 2, 3:04pm" .Date }}</h4>
 									{{ with .Params.location}}
-		  								<a href="#" onclick="openGoogleMap({{ . }})">Open in Google Maps</a>
+										<a href="#" onclick="openGoogleMap({{ . }})">Open in Google Maps</a>
 									{{ end }}
 
 									<div style="border-top: solid 2px #e5e5e5; margin-top: 1.5em;">
 										{{.Content}}
 									</div>
 								</header>
-								<span class="image featured"><img src="{{ .Params.thumbnail }}" alt="" /></span>
+								{{ with .Params.thumbnail }}
+									<span class="image featured"><img src="{{ . }}" alt="" /></span>
+								{{ end }}
 							</section>
 						{{end}}
 					{{end}}

@@ -14,6 +14,6 @@ collections:
     fields:
       - { label: 'Park Name', name: 'title', widget: 'string' }
       - { label: 'Meetup Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss', date_format: 'ddd MMM DD', time_format: 'hh:mma'}
-      - { label: "Image", name: "thumbnail", widget: "image"}
+      - { label: "Image", name: "thumbnail", widget: "image", required: false}
       - { label: "Location", name: "location", widget: "map" }
       - { label: 'Body', name: 'body', widget: 'markdown' }
