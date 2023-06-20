@@ -3,9 +3,8 @@
 # these settings. You can define environment variables
 # here but we recommend using the Netlify UI for sensitive
 # values to keep them out of your source repository.
-[context.production.environment]
-  NODE_VERSION = 20
-  HUGO_VERSION = 0.112.4
+[context.production]
+  environment = { NODE_VERSION = "20", "HUGO_VERSION":"0.112.4" }
 
 # Here is an example of how to define context-specific
 # environment variables. Be mindful when using this
