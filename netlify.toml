@@ -3,26 +3,6 @@
 # these settings. You can define environment variables
 # here but we recommend using the Netlify UI for sensitive
 # values to keep them out of your source repository.
-[context.production]
-  environment = { "NODE_VERSION":"20", "HUGO_VERSION":"0.112.4" }
-
-# Here is an example of how to define context-specific
-# environment variables. Be mindful when using this
-# option and avoid committing sensitive values to public
-# source repositories.
-[context.deploy-preview.environment]
-  NOT_PRIVATE_ITEM = "not so secret"
-
-# Branch Deploy context: all deploys that are not from
-# a pull/merge request or from the Production branch
-# will inherit these settings.
-[context.branch-deploy.environment]
-  NODE_ENV = "development"
-
-# Dev context: environment variables set here
-# are available for local development environments
-# run using Netlify Dev. These values can be
-# overwritten on branches that have a more specific
-# branch context configured.
-[context.dev.environment]
-  NODE_ENV = "development"
+[context.production.environment]
+  NODE_VERSION = "20"
+  HUGO_VERSION = "0.112.4"
