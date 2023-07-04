@@ -6,6 +6,6 @@ location: '{"type":"Point","coordinates":[-104.9026121,40.4820173]}'
 ---
 Join us at Winsor Swim Beach! Being in landlocked Colorado doesn't mean we can't play on a sandy shore.
 
-There are paddle boats and such to rent as well as a conscession stand if you want a cold treat. 
+There are paddle boats and such to rent as well as a concession stand if you want a cold treat. 
 
 We like to bring umbrellas and lawn chairs since there isn't much shade or places to sit on the sand.
